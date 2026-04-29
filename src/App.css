@@ -1,38 +1,204 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #111827;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: #b5327c;
+  color: #f8fafc;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.App-header p {
+  margin: 0.75rem auto 0;
+  max-width: 700px;
+  color: #cbd5e1;
+}
+
+.storefront {
+  display: grid;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.products,
+.cart {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.product-card {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.85rem;
+  padding: 1.25rem;
+  background: #f8fafc;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.product-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.product-card strong {
+  font-size: 1.05rem;
+}
+
+.product-card button {
+  margin-top: auto;
+  padding: 0.85rem 1rem;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.product-card button:hover {
+  background: #1e293b;
+}
+
+.cart-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.85rem;
+  background: #f8fafc;
+}
+
+.cart-item div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.cart-item button {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.order-summary,
+.checkout-form,
+.payment-result,
+.status-message {
+  margin-top: 1rem;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.checkout-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.checkout-form input {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.7rem;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+}
+
+.checkout-button {
+  width: fit-content;
+  padding: 0.95rem 1.2rem;
+  border: none;
+  border-radius: 0.9rem;
+  background: #2563eb;
   color: white;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.checkout-button:hover {
+  background: #1d4ed8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.status-message {
+  color: #334155;
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background: #e2e8f0;
+}
+
+.payment-result {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.85rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.instructions {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+}
+
+.instructions h2 {
+  margin-top: 0;
+}
+
+.instructions ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #475569;
+}
+
+.instructions code {
+  background: #e2e8f0;
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.35rem;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 900px) {
+  .storefront {
+    grid-template-columns: 2fr 1fr;
   }
 }
