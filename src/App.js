@@ -5,7 +5,7 @@ import './App.css';
 
 // Sends a checkout request to the backend PayNow route.
 async function createPayNowPayment({ userId, items, reference, email, phone, method }) {
-  const response = await fetch('/api/paynow', {
+  const response = await fetch('https://my-ecommerce-app-nh34.onrender.com/api/paynow', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ async function createPayNowPayment({ userId, items, reference, email, phone, met
 
 // Authentication API calls
 async function loginUser(email, password) {
-  const response = await fetch('/api/auth/login', {
+  const response = await fetch('https://my-ecommerce-app-nh34.onrender.com/api/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
@@ -40,7 +40,7 @@ async function loginUser(email, password) {
 }
 
 async function signupUser(email, password) {
-  const response = await fetch('/api/auth/signup', {
+  const response = await fetch('https://my-ecommerce-app-nh34.onrender.com/api/auth/signup', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
@@ -91,7 +91,7 @@ function App() {
   useEffect(() => {
     async function loadProducts() {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch('https://my-ecommerce-app-nh34.onrender.com/api/products');
         const data = await response.json();
         if (data.success) {
           setProducts(data.products);
